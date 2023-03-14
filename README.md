@@ -1,2 +1,2 @@
 # Whot-Whot
-A fun game 
+A fun card game 
