@@ -1,0 +1,47 @@
+@mixin Lg {
+  /* Paragraph Lg */
+
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 24px;
+
+  text-align: center;
+}
+
+@mixin H3 {
+  /* Heading 3 */
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 46.88px;
+  line-height: 64px;
+
+  text-align: center;
+}
+
+@mixin H5 {
+  /* Heading 5 */
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 41px;
+
+  text-align: center;
+}
+
+@mixin H6 {
+  /* Heading 6 */
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+
+  text-align: center;
+}

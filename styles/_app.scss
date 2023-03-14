@@ -1,0 +1,27 @@
+.app {
+  background-color: $black;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px;
+  box-sizing: border-box;
+  gap: 48px;
+  flex-direction: column;
+
+  &__water-mark {
+    position: absolute;
+    opacity: 5%;
+    background-image: url(../src/assets/images/water_mark.jpg);
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+}

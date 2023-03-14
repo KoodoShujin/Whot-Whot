@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./fonts";
+@import "./colors";
+@import "./mixins";
+@import "./typography";
+@import "./app";
+
+@import "./components/template/layout";
+@import "./components/organism/form-section";
+@import "./components/molecule/form";
+@import "./components/atom/input";
