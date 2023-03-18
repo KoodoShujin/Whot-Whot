@@ -2,6 +2,10 @@
   @include Lg;
 }
 
+.txt-md {
+  @include Md;
+}
+
 .txt-h3 {
   @include H3;
 }

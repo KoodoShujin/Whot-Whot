@@ -10,6 +10,18 @@
   text-align: center;
 }
 
+@mixin Md {
+  /* Paragraph Md */
+
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+
+  text-align: center;
+}
+
 @mixin H3 {
   /* Heading 3 */
 

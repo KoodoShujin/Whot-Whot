@@ -1,0 +1,5 @@
+.error {
+  @include Md;
+  color: $primary;
+  text-align: left;
+}
