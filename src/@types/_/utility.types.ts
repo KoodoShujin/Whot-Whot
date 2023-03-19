@@ -1,7 +1,8 @@
 // it makes one of a set of fields from an interface to be required
 type oneMustBeConstant<T, U extends keyof T> = Pick<T, Exclude<keyof T, U>> &
   {
-    [key in U]: Required<Pick<T, key>>;
+    [key in U]: Required<Pick<T, key>> &
+      Partial<Pick<T, Exclude<keyof T, key>>>;
   }[U];
 
 // it makes part of an interface to be required and the other part optional

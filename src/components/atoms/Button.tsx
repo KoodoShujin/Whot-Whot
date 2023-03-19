@@ -1,5 +1,5 @@
 import { ButtonVariants } from "@/src/@types/atoms/Button.types";
-import { eventNoArg } from "@/src/@types/index.types";
+import { noArg } from "@/src/@types/index.types";
 import clsx from "clsx";
 import { ReactComponentElement } from "react";
 
@@ -7,7 +7,7 @@ interface IProp {
   className?: string;
   children: String | ReactComponentElement<any, any>[];
   variant?: ButtonVariants;
-  onClick?: eventNoArg;
+  onClick?: noArg;
 }
 
 const { NORMAL } = ButtonVariants;

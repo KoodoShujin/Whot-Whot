@@ -1,5 +1,5 @@
 import { InputVariants } from "@/src/@types/atoms/Input.types";
-import { eventArg, eventNoArg } from "@/src/@types/index.types";
+import { arg, noArg } from "@/src/@types/index.types";
 import clsx from "clsx";
 import { ReactElement } from "react";
 
@@ -8,7 +8,7 @@ interface Iprop {
   type?: "text" | "number" | "password";
   className?: string;
   variant?: InputVariants;
-  onChange: eventArg<any>;
+  onChange: arg<any>;
   value: string | number;
 }
 

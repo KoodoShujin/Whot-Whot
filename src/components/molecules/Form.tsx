@@ -1,4 +1,4 @@
-import { eventArg } from "@/src/@types/index.types";
+import { arg } from "@/src/@types/index.types";
 import { FormVariants } from "@/src/@types/molecules/Form.types";
 import clsx from "clsx";
 import {
@@ -9,7 +9,7 @@ import {
 } from "react";
 
 interface IProps {
-  onSubmit?: eventArg<any>;
+  onSubmit?: arg<any>;
   className?: string;
   variant?: FormVariants;
   children?: ReactNode | ReactNode[];

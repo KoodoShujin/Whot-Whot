@@ -82,8 +82,6 @@ const useInputs = (initialState: InputInitialState[]) => {
               return false;
             }
 
-            console.log({ validator });
-
             setInputError(
               name,
               Boolean((value as string).trim()) || eventType === "onSubmit"

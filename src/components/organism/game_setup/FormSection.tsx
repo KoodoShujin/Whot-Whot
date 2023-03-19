@@ -1,17 +1,20 @@
 import { ButtonVariants } from "@/src/@types/atoms/Button.types";
 import {
+  GameMode,
   InputInitialState,
   InputStateType,
   noArgReturn,
 } from "@/src/@types/index.types";
 import { FormVariants } from "@/src/@types/molecules/Form.types";
 import useInputs from "@/src/hooks/Inputs.hook";
+import { isNumber, isRange, isRequired } from "@/src/utils/validator.creator";
 import clsx from "clsx";
 import { validateConfig } from "next/dist/server/config-shared";
 import { ReactNode, useState } from "react";
 import Button from "../../atoms/Button";
 import Input from "../../atoms/Input";
 import Form from "../../molecules/Form";
+import Select from "../../molecules/Select";
 
 interface IProps {
   className?: string;
@@ -23,43 +26,13 @@ const FormSection = ({}: IProps) => {
       name: "initialCardPerPlayer",
       placeholder: "Initial Card Per Player...",
       validateOnChange: true,
-      validations: [
-        {
-          regExp: /.+/,
-          error: "It is Required",
-        },
-        {
-          regExp: /^\d*$/,
-          error: "It must be a number",
-        },
-        {
-          validateOnChange: true,
-          validate: (value: string) =>
-            Boolean(Number(value) >= 3 && Number(value) <= 10),
-          error: "It is number between 3 and 10",
-        },
-      ].reverse(),
+      validations: [isRequired(), isNumber(), isRange(3, 10)].reverse(),
     },
     {
       name: "playTimePerPlayer",
       placeholder: "Play Time Per Player... (20s - 60s)",
       validateOnChange: true,
-      validations: [
-        {
-          regExp: /.+/,
-          error: "It is Required",
-        },
-        {
-          regExp: /^\d*$/,
-          error: "It must be a number",
-        },
-        {
-          validateOnChange: true,
-          validate: (value: string) =>
-            Boolean(Number(value) >= 20 && Number(value) <= 60),
-          error: "It is number between 20 and 60",
-        },
-      ].reverse(),
+      validations: [isRequired(), isNumber(), isRange(3, 10)].reverse(),
     },
   ];
 
@@ -67,11 +40,10 @@ const FormSection = ({}: IProps) => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-
     const isInputsValid: boolean = validateAll();
-
-    console.log({ isInputsValid });
   };
+
+  const { SINGLE_PLAYER, MULTI_PLAYER } = GameMode;
 
   return (
     <section className="form-section">
@@ -94,6 +66,20 @@ const FormSection = ({}: IProps) => {
               </div>
             );
           })}
+          <Select
+            placeholder="Game Mode"
+            wrapperClassName="col-span-2"
+            options={[
+              {
+                value: "Single Player",
+                id: SINGLE_PLAYER,
+              },
+              {
+                value: "Multi Player",
+                id: MULTI_PLAYER,
+              },
+            ]}
+          ></Select>
         </div>
 
         <Button>Start Game</Button>
