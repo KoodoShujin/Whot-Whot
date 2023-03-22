@@ -15,17 +15,17 @@ interface IProps {
   children?: ReactNode | ReactNode[];
 }
 
-const { NORMAL } = FormVariants;
+const { PRIMARY } = FormVariants;
 
 const Form = ({
-  variant = NORMAL,
+  variant = PRIMARY,
   onSubmit,
   className = "",
   children,
 }: IProps) => {
   switch (variant) {
-    case NORMAL:
-      className = clsx(className, "form__normal");
+    case PRIMARY:
+      className = clsx(className, PRIMARY);
       break;
     default:
       break;

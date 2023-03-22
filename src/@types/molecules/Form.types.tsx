@@ -1,5 +1,5 @@
 enum FormVariants {
-  NORMAL,
+  PRIMARY = "form__primary",
 }
 
 export { FormVariants };

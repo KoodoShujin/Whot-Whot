@@ -17,20 +17,20 @@ interface IProps {
   value?: string | number;
 }
 
-const { NORMAL } = SelectVariants;
+const { PRIMARY } = SelectVariants;
 
 const Select = ({
   placeholder,
   className,
-  variant = NORMAL,
+  variant = PRIMARY,
   options,
   value,
   wrapperClassName,
 }: oneMustBeConstant<IProps, "placeholder" | "value">) => {
   switch (variant) {
-    case NORMAL:
+    case PRIMARY:
       wrapperClassName = clsx(wrapperClassName, "select");
-      className = clsx(className, "select__normal");
+      className = clsx(className, PRIMARY);
       break;
     default:
       break;
@@ -56,8 +56,8 @@ const Select = ({
       </div>
       {visibilty && (
         <div className="select__options">
-          {options?.map((opt: SelectOptionType) => {
-            return <option> {opt?.value}</option>;
+          {options?.map((opt: SelectOptionType, i: number) => {
+            return <option key={`select_opt_${i}`}> {opt?.value}</option>;
           })}
         </div>
       )}

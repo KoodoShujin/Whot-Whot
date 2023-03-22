@@ -12,19 +12,19 @@ interface Iprop {
   value: string | number;
 }
 
-const { NORMAL } = InputVariants;
+const { PRIMARY } = InputVariants;
 
 const Input = ({
   placeholder,
   type = "text",
-  variant = NORMAL,
+  variant = PRIMARY,
   onChange,
   className = "",
   value,
 }: Iprop) => {
   switch (variant) {
-    case NORMAL:
-      className = clsx(className, "input__normal");
+    case PRIMARY:
+      className = clsx(className, PRIMARY);
       break;
     default:
       break;

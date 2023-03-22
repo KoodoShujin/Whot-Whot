@@ -1,5 +1,5 @@
 enum InputVariants {
-  NORMAL,
+  PRIMARY = "input__primary",
 }
 
 export { InputVariants };

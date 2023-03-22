@@ -10,19 +10,15 @@ interface IProp {
   onClick?: noArg;
 }
 
-const { NORMAL } = ButtonVariants;
+const { PRIMARY } = ButtonVariants;
 
-const Button = ({ children, variant = NORMAL, className, onClick }: IProp) => {
+const Button = ({ children, variant = PRIMARY, className, onClick }: IProp) => {
   switch (variant) {
-    case NORMAL:
-      className = clsx(
-        className,
-        "bg-tertiary txt-h6 txt-black5 py-[24px] px-[96px] rounded-[4px]"
-      );
-      break;
     default:
+      className = clsx(className, variant);
       break;
   }
+
   return (
     <button className={className} onClick={onClick}>
       {children}

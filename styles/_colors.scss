@@ -2,12 +2,17 @@
 $primary: #e05252;
 $tertiary: #f39c4c;
 $black: #1b1818;
+$black75: #545252;
 $black50: #8d8c8c;
 $black25: #c6c5c5;
 $black5: #f4f3f3;
 
 .bg-tertiary {
   background-color: $tertiary;
+}
+
+.bg-primary {
+  background-color: $primary;
 }
 
 .txt-black25 {

@@ -1,7 +1,7 @@
 import { GameMode } from "../_/constants.types";
 
 enum SelectVariants {
-  NORMAL,
+  PRIMARY = "select__primary",
 }
 
 type SelectOptionType = {

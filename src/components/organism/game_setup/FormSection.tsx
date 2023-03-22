@@ -44,6 +44,7 @@ const FormSection = ({}: IProps) => {
   };
 
   const { SINGLE_PLAYER, MULTI_PLAYER } = GameMode;
+  const { PRIMARY_FILL, BLACK75_FILL } = ButtonVariants;
 
   return (
     <section className="form-section">
@@ -82,7 +83,10 @@ const FormSection = ({}: IProps) => {
           ></Select>
         </div>
 
-        <Button>Start Game</Button>
+        <div className="flex gap-[32px] w-full">
+          <Button variant={BLACK75_FILL}>Settings</Button>
+          <Button variant={PRIMARY_FILL}>Start Game</Button>
+        </div>
       </Form>
     </section>
   );
