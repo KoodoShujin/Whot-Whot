@@ -3,14 +3,9 @@ import {
   GameMode,
   InputInitialState,
   InputStateType,
-  noArgReturn,
 } from "@/src/@types/index.types";
-import { FormVariants } from "@/src/@types/molecules/Form.types";
 import useInputs from "@/src/hooks/Inputs.hook";
 import { isNumber, isRange, isRequired } from "@/src/utils/validator.creator";
-import clsx from "clsx";
-import { validateConfig } from "next/dist/server/config-shared";
-import { ReactNode, useState } from "react";
 import Button from "../../atoms/Button";
 import Input from "../../atoms/Input";
 import Form from "../../molecules/Form";
@@ -26,13 +21,13 @@ const FormSection = ({}: IProps) => {
       name: "initialCardPerPlayer",
       placeholder: "Initial Card Per Player...",
       validateOnChange: true,
-      validations: [isRequired(), isNumber(), isRange(3, 10)].reverse(),
+      validations: [isRange(3, 10), isNumber(), isRequired()],
     },
     {
       name: "playTimePerPlayer",
       placeholder: "Play Time Per Player... (20s - 60s)",
       validateOnChange: true,
-      validations: [isRequired(), isNumber(), isRange(3, 10)].reverse(),
+      validations: [isRange(3, 10), isNumber(), isRequired()],
     },
   ];
 
@@ -47,7 +42,7 @@ const FormSection = ({}: IProps) => {
   const { PRIMARY_FILL, BLACK75_FILL } = ButtonVariants;
 
   return (
-    <section className="form-section">
+    <section className=".form-section_gsg">
       <Form onSubmit={onSubmit}>
         <div className="grid grid-cols-[1fr_1fr] gap-[32px]">
           {inputs.map((input: InputStateType): any => {

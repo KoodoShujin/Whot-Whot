@@ -3,3 +3,20 @@
   color: $primary;
   text-align: left;
 }
+
+.beautiful-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $black;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $black10;
+    border-radius: 8px;
+  }
+}

@@ -1,7 +1,12 @@
 import { InputVariants } from "@/src/@types/atoms/Input.types";
 import { arg, noArg } from "@/src/@types/index.types";
 import clsx from "clsx";
-import { ReactElement } from "react";
+import {
+  ForwardedRef,
+  MutableRefObject,
+  ReactElement,
+  forwardRef,
+} from "react";
 
 interface Iprop {
   placeholder?: string | undefined;
@@ -14,19 +19,20 @@ interface Iprop {
 
 const { PRIMARY } = InputVariants;
 
-const Input = ({
-  placeholder,
-  type = "text",
-  variant = PRIMARY,
-  onChange,
-  className = "",
-  value,
-}: Iprop) => {
+const Input = (
+  {
+    placeholder,
+    type = "text",
+    variant = PRIMARY,
+    onChange,
+    className = "",
+    value,
+  }: Iprop,
+  ref: ForwardedRef<HTMLInputElement>
+) => {
   switch (variant) {
-    case PRIMARY:
-      className = clsx(className, PRIMARY);
-      break;
     default:
+      className = clsx(className, variant);
       break;
   }
 
@@ -39,8 +45,10 @@ const Input = ({
       onChange={(e: any) => {
         onChange?.(e);
       }}
+      ref={ref}
     />
   );
 };
 
-export default Input;
+export type { Iprop as InputProp };
+export default forwardRef(Input);

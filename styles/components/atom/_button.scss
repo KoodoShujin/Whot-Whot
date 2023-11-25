@@ -5,6 +5,15 @@
   background-color: $bg;
   padding: 24px 96px;
   border-radius: 4px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-md($bg) {
+  @include button($bg);
+  padding: 24px 48px;
 }
 
 .button {
@@ -14,6 +23,20 @@
 
   &__black75 {
     @include button($black75);
+  }
+
+  &__fill {
+    width: 100%;
+  }
+}
+
+.button-md {
+  &__primary {
+    @include button-md($primary);
+  }
+
+  &__black75 {
+    @include button-md($black75);
   }
 
   &__fill {

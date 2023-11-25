@@ -1,4 +1,4 @@
-.input {
+.icon-input {
   &__primary {
     @include Lg;
 
@@ -6,22 +6,13 @@
     width: 100%;
     text-align: left;
 
+    display: flex;
+    justify-content: space-between;
+
     border: 2px solid $black50;
     color: $black5;
     background-color: transparent;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
-  }
-
-  &__icon-input {
-    @include Lg;
-
-    width: 100%;
-    text-align: left;
-
-    outline: none;
-
-    color: $black5;
-    background-color: transparent;
   }
 }

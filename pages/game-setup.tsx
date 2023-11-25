@@ -1,7 +1,7 @@
-import FormSection from "@/src/components/organism/game_setup/FormSection";
+import FormSection from "@/src/components/organism/game-setup/FormSection";
 import Layout from "@/src/components/template/Layout";
 
-const Setup = () => {
+const GameSetup = () => {
   return (
     <Layout title={"Game Setup Page"}>
       <div className="txt-h3 txt-black5">Setup Your Game</div>
@@ -11,4 +11,4 @@ const Setup = () => {
   );
 };
 
-export default Setup;
+export default GameSetup;

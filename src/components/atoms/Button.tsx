@@ -5,7 +5,7 @@ import { ReactComponentElement } from "react";
 
 interface IProp {
   className?: string;
-  children: String | ReactComponentElement<any, any>[];
+  children: String | React.ReactNode | String[] | React.ReactNode[];
   variant?: ButtonVariants;
   onClick?: noArg;
 }

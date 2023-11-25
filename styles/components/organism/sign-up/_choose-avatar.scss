@@ -1,0 +1,60 @@
+.choose-avatar-su {
+  background-color: $primary;
+  width: 100%;
+  height: 100%;
+  padding: 64px;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 48px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+  }
+
+  &__head-text {
+    @include H5;
+    color: $black5;
+  }
+
+  &__preview-box {
+    image-rendering: optimizeQuality;
+    padding: 16px;
+    background-color: rgba(27, 24, 24, 0.6);
+    box-shadow: inset 0 4 4 0 rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+  }
+
+  &__preview-question-box {
+    @include H6;
+    color: $black5;
+    padding: 16px 20px;
+    background-color: rgba(27, 24, 24, 0.4);
+    box-shadow: inset 0 4 4 0 rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+  }
+
+  &__main {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    border-radius: 8px;
+    padding-right: 10px;
+    overflow: auto;
+  }
+
+  &__avatar-container {
+    display: grid;
+    padding: 40px;
+    padding-right: 48px;
+    // border-radius: 8px;
+    gap: 48px;
+    justify-content: center;
+    background-color: $black;
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  }
+}
